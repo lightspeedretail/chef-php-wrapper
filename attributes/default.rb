@@ -41,7 +41,7 @@ default[:php][:directives].tap do |config|
   config[:max_execution_time]   = "30"
   config[:max_input_time]       = "-1"
   config[:max_input_vars]       = 1000
-  config[:default_socket_timeout] = "60"
+  config[:default_socket_timeout] = "28"
   config[:html_errors]          = "Off"
   config[:display_errors]       = "Off"
   config[:error_reporting]      = "E_ALL & ~E_DEPRECATED"
