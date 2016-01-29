@@ -37,3 +37,5 @@ Installs a global `composer` binary installation
 #### php_fpm
 Installs and configures the `php-fpm` package and pools.
 
+*Note*: The `php_pool` resource automatically sets the status page and ping path to be /_php/status and /_php/ping respectively. It is left up to you to secure the /_php/ uri path so that it may only be reached by your monitoring system.
+
