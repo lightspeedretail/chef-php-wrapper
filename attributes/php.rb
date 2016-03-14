@@ -3,13 +3,6 @@
 #
 default[:php][:conf_dir] = "/etc/php5"
 
-# Ubuntu PPA Support
-#
-default[:php][:ppas]["php5-5.6"].tap do |ppa|
-  ppa[:uri] = "ppa:ondrej/php5-5.6"
-  ppa[:enabled] = false
-end
-
 # Install packages
 # (php upstream)
 default[:php][:packages].concat(%w())
@@ -49,6 +42,6 @@ default[:php][:directives].tap do |config|
   config[:expose_php]           = "Off"
   config[:cgi_fix_pathinfo]     = 0
   config["opcache.enable"]      = "On"
-  config["opcache.memory_consumption"] = conf[:memory_limit]
+  config["opcache.memory_consumption"] = config[:memory_limit]
   config["opcache.max_accelerated_files"]   = 2000
 end
