@@ -13,7 +13,7 @@ property :cwd,
 # Arguments to pass to composer
 property :arguments,
   kind_of: [String, Array],
-  coerce: { |v| Array(v) },
+  coerce: proc { |v| Array(v) },
   default: %w(--no-ansi --no-interaction --prefer-dist --optimize-autoloader)
 
 # Path to the composer binary

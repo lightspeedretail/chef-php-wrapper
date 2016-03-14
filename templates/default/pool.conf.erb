@@ -45,7 +45,14 @@ security.limit_extensions = <%= [@security_limit_extensions].flatten.join " " %>
 <% @env_variables.each do |k,v| %>
 env[<%= k %>] = <%= v %>
 <% end %>
+<% @php_variables.each do |k,v| %>
+php_variable[<%= k %>] = <%= v %>
+<% end %>
+<% @php_flags.each do |k,v| %>
+php_flag[<%= k %>] = <%= v %>
+<% end %>
 <% @php_admin_variables.each do |k,v| %>
+php_admin_variable[<%= k %>] = <%= v %>
 <% end %>
 <% @php_admin_flags.each do |k,v| %>
 php_admin_flag[<%= k %>] = <%= v %>

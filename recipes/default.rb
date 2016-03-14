@@ -19,7 +19,7 @@ end
 #
 node[:php][:pear_packages].each do |name, hash|
   php_pear name do
-    load_properties(hash)
+    common_properties(hash)
   end
 end
 
@@ -27,9 +27,9 @@ end
 # - These are essentially used to plop down /etc/php5/conf.d/*.conf files which
 #   provide default configurations for some/all SAPIs.
 #
-node[:php][:module_directives].each do |name, hash|
+node[:php][:directives][:module].each do |name, hash|
   php_config name do
-    load_properties(hash)
+    common_properties(hash)
   end
 end
 

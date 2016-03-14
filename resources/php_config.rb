@@ -16,7 +16,7 @@ property :name,
 # Priority prefix for the enabled configuration file
 property :priority,
   kind_of: String,
-  default: 20
+  default: "20"
 
 # Target path to install the configuration file in
 property :path,
@@ -26,7 +26,7 @@ property :path,
 # PHP SAPI packages to enable / disable the module for
 property :php_sapi,
   kind_of: [String, Array],
-  coerce: { |v| Array(v).map {|v| v.split(" ")}.flatten },
+  coerce: proc { |v| Array(v).map {|v| v.split(" ")}.flatten },
   default: %w(ALL)
 
 # Cookbook providing the configuration file template

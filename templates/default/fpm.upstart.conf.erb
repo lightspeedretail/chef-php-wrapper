@@ -22,4 +22,4 @@ reload signal SIGUSR2
 pre-start exec /usr/lib/php5/php5-fpm-checkconf
 
 respawn
-exec /usr/sbin/php5-fpm --nodaemonize --fpm-config <%= node[:php][:fpm_service_conf] %>
+exec /usr/sbin/php5-fpm --nodaemonize --fpm-config <%= node[:php][:fpm][:service_conf] %>

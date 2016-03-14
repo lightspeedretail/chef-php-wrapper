@@ -1,3 +1,3 @@
 
-php_composer_binary "global composer"
+php_composer_binary "global"
 

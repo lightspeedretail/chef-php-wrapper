@@ -107,9 +107,15 @@ property :env_variables,
   kind_of: Hash,
   default: {}
 
+# boolean PHP setting overrides
+# - Note: Only PHP_INI_ALL and PHP_INIT_PERDIR options are supported
+property :php_flags,
+  kind_of: Hash,
+  default: {}
+
 # Non-boolean PHP setting overrides
 # - Note: Only PHP_INI_ALL and PHP_INIT_PERDIR options are supported
-property :php_values,
+property :php_variables,
   kind_of: Hash,
   default: {}
 
@@ -121,7 +127,7 @@ property :php_admin_flags,
 
 # Non-boolean PHP setting overrides specific to this php-pool
 # - Note: These cannot be overwritten by the application
-property :php_admin_values,
+property :php_admin_variables,
   kind_of: Hash,
   default: {}
 
@@ -133,16 +139,7 @@ property :path,
   }
 
 action :create do
-	template_resource.action :create
-end
-
-aciton :delete do
-	template_resource.action :delete
-end
-
-# Create the php-pool template resource to return to the action methods
-def template_resource
-	@template_resource ||= template new_resource.path do
+  template new_resource.path do
     path      new_resource.path
     cookbook  "php_wrapper"
     source    "pool.conf.erb"
@@ -150,7 +147,13 @@ def template_resource
     group     "root"
     mode      00640
     variables new_resource.variables
-    action    :nothing
+    action    :create
+  end
+end
+
+action :delete do
+  template new_resource.path do
+    action :delete
   end
 end
 
@@ -173,13 +176,15 @@ def variables
     start_servers: start_servers,
     min_spare_servers: min_spare_servers,
     max_spare_servers: max_spare_servers,
-    max_requets: max_requets,
+    max_requets: max_requests,
     catch_workers_output: catch_workers_output,
     status_path: status_path,
     ping_path: ping_path,
     security_limit_extensions: security_limit_extensions,
     request_terminate_timeout: request_terminate_timeout,
     env_variables: env_variables,
+    php_variables: php_variables,
+    php_flags: php_flags,
     php_admin_variables: php_admin_variables,
     php_admin_flags: php_admin_flags
   }
