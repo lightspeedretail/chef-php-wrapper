@@ -1,31 +1,25 @@
 
 # Core config
-#
 default[:php][:conf_dir] = "/etc/php5"
 
-# Install packages
-# (php upstream)
+# Install packages through the standard `php` cookbook
 default[:php][:packages].concat(%w())
 default[:php][:mysql][:package] = "php5-mysqlnd"
 
-# Install PHP Pear packages
-# (php_wrapper::deault)
+# Install PHP Pear packages through our custom resources
 default[:php][:pear_packages] = {}
 
 # Use custom php.ini template
 # (php upstream)
 default[:php][:ini][:cookbook] = "php_wrapper"
 
-# Custom php.ini directives
-# (php_wrapper template)
+# Custom php.ini directives which are appended to the bottom of php.ini
 default[:php][:directives][:custom] ||= {}
 
-# Install module configuration files
-# (php_wrapper::default)
+# Install module configuration files to conf.d directories
 default[:php][:directives][:module] = {}
 
 # Default configuration
-#
 default[:php][:directives].tap do |config|
   config["date.timezone"]       = "UTC"
   config[:memory_limit]         = "128M"

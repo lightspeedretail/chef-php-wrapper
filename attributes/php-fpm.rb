@@ -14,6 +14,7 @@ default[:php][:fpm][:control_timeout] = 0
 # php-fpm pool definitions
 #
 default[:php][:fpm][:pools].tap do |config|
+  # This is the default pool configuration as shipped with Ubuntu
   config[:www].tap do |www|
     www[:listen] = "127.0.0.1:65500"
     www[:user] = node[:php][:fpm_user]
