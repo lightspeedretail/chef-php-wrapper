@@ -13,7 +13,6 @@ template node[:php][:fpm][:service_conf] do
 end
 
 # Override the upstart service script on ubuntu to resolve broken restart
-#
 template "/etc/init/php5-fpm.conf" do
   source  "fpm.upstart.conf.erb"
   mode    00644
@@ -27,6 +26,7 @@ end
 node[:php][:fpm][:pools].each do |name, hash|
   php_pool name do
     common_properties(hash)
+    notifies :reload, "service[#{node[:php][:fpm_service]}]"
   end
 end
 
