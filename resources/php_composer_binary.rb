@@ -1,9 +1,8 @@
-
-# A php_composer_binary installs composer to the filesystem
-#
+# A resource which handles installing the Composer php application either
+# globally or for a given project. 
+# @since 2.0.0
 
 resource_name :php_composer_binary
-actions :create, :delete
 
 # Path to install composer to
 property :path,
@@ -28,6 +27,16 @@ def installer_path
     Chef::Config["file_cache_path"], 
     "composer.#{version || "latest"}"
   )
+end
+
+# Ensure that the resource is applied regardless of whether we are in why_run
+# or standard mode.
+#
+# Refer to chef/chef#4537 for this uncommon syntax
+action_class do
+  def whyrun_supported?
+    true
+  end
 end
 
 # Create the current_resource object to compare against new_resource
