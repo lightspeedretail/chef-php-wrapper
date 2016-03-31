@@ -23,8 +23,9 @@ property :listen,
 
 # The file permissions to create the php socket on (when listen is a path)
 property :listen_mode,
-  kind_of: [Integer,String],
-  default: 00660
+  kind_of: String,
+  coerce: proc { |v| v.to_s },
+  default: "00660"
 
 # The owner of the php socket (when listen is a path)
 property :listen_user,
