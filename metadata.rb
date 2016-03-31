@@ -1,4 +1,4 @@
-uname 'php_wrapper'
+name 'php_wrapper'
 maintainer 'Jonathan Serafini'
 maintainer_email 'jonathan@serafini.ca'
 license 'apachev2'
