@@ -3,7 +3,6 @@
 #
 
 resource_name :php_composer_command
-actions :run
 
 # Path to execute composer in
 property :cwd,
@@ -32,6 +31,16 @@ property :group,
 # Hash of environment variables to set
 property :environment,
   kind_of: Hash
+
+# Ensure that the resource is applied regardless of whether we are in why_run
+# or standard mode.
+#
+# Refer to chef/chef#4537 for this uncommon syntax
+action_class do
+  def whyrun_supported?
+    true
+  end
+end
 
 action :run do
   execute "composer #{new_resource.arguments.join(" ")}" do

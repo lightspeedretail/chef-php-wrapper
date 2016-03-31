@@ -2,15 +2,15 @@
 ; Local modifications will be overwritten.
 ;
 
-include=<%= "#{node[:php][:fpm_pooldir]}/*.conf" %>
+include=<%= "#{@pool_dir}/*.conf" %>
 
 [global]
-pid = <%= node[:php][:fpm_pid] %>
-error_log = <%= node[:php][:fpm_error_log] %>
-log_level = <%= node[:php][:fpm_log_level] %>
+pid = <%= @pid %>
+error_log = <%= @error_log %>
+log_level = <%= @log_level %>
 
-emergency_restart_threshold = <%= node[:php][:fpm_restart_threshold]  %>
-emergency_restart_interval = <%= node[:php][:fpm_restart_interval]  %>
-process_control_timeout = <%= node[:php][:fpm_control_timeout]  %>
+emergency_restart_threshold = <%= @restart_threshold %>
+emergency_restart_interval = <%= @restart_interval %>
+process_control_timeout = <%= @control_timeout  %>
 
 daemonize = yes

@@ -3,12 +3,16 @@
 # there are also other fpm specific configurations provded by the upstream php
 # cookbook.
 #
+default[:php][:fpm][:pool_dir] = "/etc/php5/fpm/pool.d"
+default[:php][:fpm][:user] = "www-data"
+default[:php][:fpm][:group] = "www-data"
+default[:php][:fpm][:service] = "php5-fpm"
 default[:php][:fpm][:service_conf] = "/etc/php5/fpm/php-fpm.conf"
 default[:php][:fpm][:pid] = "/var/run/php-fpm.pid"
 default[:php][:fpm][:error_log] = "/var/log/php5-fpm.log"
 default[:php][:fpm][:log_level] = "warning"
 default[:php][:fpm][:restart_threshold] = 0
-default[:php][:fpm][:restart_interval] = -
+default[:php][:fpm][:restart_interval] = 0
 default[:php][:fpm][:control_timeout] = 0
 
 # php-fpm pool definitions

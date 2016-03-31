@@ -1,12 +1,9 @@
+# The php_config resource is used to manage individual configuration files
+# within the php/conf.d directory
 
 require 'pathname'
 
-# The php_config resource is used to manage individual configuration files
-# within the php/conf.d directory
-#
-
-actions :create, :delete, :enable, :disable
-default_action [:create, :enable]
+resource_name :php_config
 
 # Name of the configuration file
 property :name,
@@ -49,6 +46,16 @@ property :extensions,
   kind_of: Hash,
   default: {}
 
+# Ensure that the resource is applied regardless of whether we are in why_run
+# or standard mode.
+#
+# Refer to chef/chef#4537 for this uncommon syntax
+action_class do
+  def whyrun_supported?
+    true
+  end
+end
+
 action :create do
   template_resource.action :create
 end
@@ -58,7 +65,7 @@ action :delete do
 end
 
 action :enable do
-  if supports_php5query?
+  if supports_php5query? and not whyrun_mode?
     resource_sapi_list.each do |sapi_name|
       sapi_files_found(sapi_name).each do |sapi_file|
         unless sapi_file == sapi_file_path(sapi_name, new_resource.priority)
@@ -67,12 +74,17 @@ action :enable do
       end
     end
     activation_resource(sapi_name)
+  elsif whyrun_mode?
+    Chef.run_context.events.whyrun_assumption(
+      :enable, new_resource,
+      "would enable the configuration for: #{new_resource.php_sapi.join(", ")}"
+    )
   else Chef::Log.info("#{new_resource} does not support enabling")
   end
 end
 
 action :disable do
-  if supports_php5query?
+  if supports_php5query? and not whyrun_mode?
     resource_sapi_list.each do |sapi_name|
       sapi_files_found(sapi_name).each do |sapi_file|
         if sapi_file == sapi_file_path(sapi_name, new_resource.priority)
@@ -80,6 +92,11 @@ action :disable do
         end
       end
     end
+  elsif whyrun_mode?
+    Chef.run_context.events.whyrun_assumption(
+      :disable, new_resource,
+      "would disable the configuration for: #{new_resource.php_sapi.join(", ")}"
+    )
   else  Chef::Log.info("#{new_resource} does not support disabling")
   end
 end

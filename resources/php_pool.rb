@@ -23,8 +23,9 @@ property :listen,
 
 # The file permissions to create the php socket on (when listen is a path)
 property :listen_mode,
-  kind_of: [Integer,String],
-  default: 00660
+  kind_of: String,
+  coerce: proc { |v| v.to_s },
+  default: "00660"
 
 # The owner of the php socket (when listen is a path)
 property :listen_user,
@@ -137,6 +138,16 @@ property :path,
     file_name = r.name.include?(".conf") ? r.name : "#{r.name}.conf"
     "#{node['php']['fpm_pooldir']}/#{file_name}"
   }
+
+# Ensure that the resource is applied regardless of whether we are in why_run
+# or standard mode.
+#
+# Refer to chef/chef#4537 for this uncommon syntax
+action_class do
+  def whyrun_supported?
+    true
+  end
+end
 
 action :create do
   template new_resource.path do

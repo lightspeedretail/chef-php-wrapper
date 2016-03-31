@@ -27,12 +27,10 @@ pm.min_spare_servers = <%= @min_spare_servers %>
 pm.max_spare_servers = <%= @max_spare_servers %>
 <% end %>
 <% unless @status_path.nil? %>
-
 pm.status_path = <%= @status_path %>
 <% end %>
 <% unless @ping_path.nil? %>
-
-pm.ping_path = <%= @ping_path %>
+ping.path = <%= @ping_path %>
 <% end %>
 
 request_terminate_timeout = <%= @request_terminate_timeout %>
@@ -46,13 +44,13 @@ security.limit_extensions = <%= [@security_limit_extensions].flatten.join " " %>
 env[<%= k %>] = <%= v %>
 <% end %>
 <% @php_variables.each do |k,v| %>
-php_variable[<%= k %>] = <%= v %>
+php_value[<%= k %>] = <%= v %>
 <% end %>
 <% @php_flags.each do |k,v| %>
 php_flag[<%= k %>] = <%= v %>
 <% end %>
 <% @php_admin_variables.each do |k,v| %>
-php_admin_variable[<%= k %>] = <%= v %>
+php_admin_value[<%= k %>] = <%= v %>
 <% end %>
 <% @php_admin_flags.each do |k,v| %>
 php_admin_flag[<%= k %>] = <%= v %>
