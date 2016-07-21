@@ -26,7 +26,9 @@ end
 # Create php_pool resources from attributes
 node[:php][:fpm][:pools].each do |name, hash|
   php_pool name do
-    common_properties(hash)
+    hash.each do |k,v|
+      send(k, v) if respond_to?(k)
+    end
     notifies :reload, "service[#{node[:php][:fpm][:service]}]"
   end
 end
