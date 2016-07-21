@@ -133,7 +133,7 @@ action_class do
   # List of the installed PHP SAPIs
   #
   def sapi_list
-    @sapi_list ||= if supports_php5_query?
+    @sapi_list ||= if supports_php5query?
                      `/usr/sbin/php5query -q -S`.split("\n")
                    else Array.new
                    end
@@ -167,7 +167,6 @@ action_class do
   def sapi_files_found(sapi, priority = "*")
     ::Dir.glob(sapi_file_path(sapi, priority)) + ::Dir.glob(sapi_file_path(sapi))
   end
-
 end
 
 
