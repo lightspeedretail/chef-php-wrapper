@@ -36,4 +36,3 @@ node[:php][:directives][:module].each do |name, hash|
     end
   end
 end
-

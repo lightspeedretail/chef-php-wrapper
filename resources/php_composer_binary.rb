@@ -70,4 +70,3 @@ action :delete do
     action :delete
   end
 end
-

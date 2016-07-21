@@ -31,4 +31,3 @@ default[:php][:fpm][:pools].tap do |config|
     www[:action] = :create
   end
 end
-

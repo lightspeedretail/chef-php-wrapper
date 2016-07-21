@@ -168,5 +168,3 @@ action_class do
     ::Dir.glob(sapi_file_path(sapi, priority)) + ::Dir.glob(sapi_file_path(sapi))
   end
 end
-
-

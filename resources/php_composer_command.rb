@@ -53,4 +53,3 @@ action :run do
     environment new_resource.environment
   end
 end
-

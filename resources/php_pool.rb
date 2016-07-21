@@ -200,5 +200,3 @@ def variables
     php_admin_flags: php_admin_flags
   }
 end
-
-
