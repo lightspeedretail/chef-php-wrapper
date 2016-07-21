@@ -1,5 +1,8 @@
 php_wrapper
 ======
+# 2.1.3
+* Bugfix symlinks
+
 # 2.1.2
 * Bugfix php sapi detection
 
