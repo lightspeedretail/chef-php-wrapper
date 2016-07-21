@@ -45,9 +45,9 @@ action_class do
 end
 
 action :run do
-  execute "composer #{new_resource.arguments.join(" ")}" do
+  execute "composer #{new_resource.arguments.join(' ')}" do
     cwd new_resource.cwd
-    command "#{new_resource.path} #{new_resource.arguments.join(" ")}"
+    command "#{new_resource.path} #{new_resource.arguments.join(' ')}"
     user new_resource.user
     group new_resource.group
     environment new_resource.environment

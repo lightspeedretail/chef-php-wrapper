@@ -25,7 +25,7 @@ property :source_url,
 def installer_path
   ::File.join(
     Chef::Config['file_cache_path'],
-    "composer.#{version || "latest"}"
+    "composer.#{version || 'latest'}"
   )
 end
 

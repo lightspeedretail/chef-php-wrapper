@@ -67,7 +67,7 @@ action :enable do
   elsif whyrun_mode?
     Chef.run_context.events.whyrun_assumption(
       :enable, new_resource,
-      "would enable the configuration for: #{new_resource.php_sapi.join(", ")}"
+      "would enable the configuration for: #{new_resource.php_sapi.join(', ')}"
     )
   else Chef::Log.info("#{new_resource} does not support enabling")
   end
@@ -85,7 +85,7 @@ action :disable do
   elsif whyrun_mode?
     Chef.run_context.events.whyrun_assumption(
       :disable, new_resource,
-      "would disable the configuration for: #{new_resource.php_sapi.join(", ")}"
+      "would disable the configuration for: #{new_resource.php_sapi.join(', ')}"
     )
   else  Chef::Log.info("#{new_resource} does not support disabling")
   end
