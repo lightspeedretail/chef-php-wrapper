@@ -7,9 +7,9 @@ ini.notifies :reload, "service[#{node[:php][:fpm][:service]}]"
 
 # Install the PHP FPM configuration file
 template node[:php][:fpm][:service_conf] do
-  source  'fpm.conf.erb'
+  source 'fpm.conf.erb'
   variables lazy { node[:php][:fpm] }
-  mode    00644
+  mode 00644
   notifies :reload, "service[#{node[:php][:fpm][:service]}]"
 end
 

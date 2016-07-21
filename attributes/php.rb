@@ -37,5 +37,5 @@ default[:php][:directives].tap do |config|
   config[:cgi_fix_pathinfo]     = 0
   config['opcache.enable']      = 'On'
   config['opcache.memory_consumption'] = config[:memory_limit]
-  config['opcache.max_accelerated_files']   = 2000
+  config['opcache.max_accelerated_files'] = 2000
 end
