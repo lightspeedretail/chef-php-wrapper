@@ -62,8 +62,8 @@ action :enable do
           activation_resource(sapi_name, sapi_file).action :delete
         end
       end
+      activation_resource(sapi_name).action :create
     end
-    activation_resource(sapi_name)
   elsif whyrun_mode?
     Chef.run_context.events.whyrun_assumption(
       :enable, new_resource,
@@ -118,7 +118,7 @@ action_class do
   def activation_resource(sapi_name, sapi_file = nil)
     sapi_file ||= sapi_file_path(sapi_name, new_resource.priority)
     link sapi_file do
-      new_resource.path
+      to new_resource.path
       action :nothing
     end
   end
