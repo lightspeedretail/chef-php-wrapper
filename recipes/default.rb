@@ -1,4 +1,4 @@
-include_recipe "php::default"
+include_recipe 'php::default'
 
 # Ensure that php.ini is symlinked into each PHP SAPI to prevent having to
 # manage a bunch of different configuration files.

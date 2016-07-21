@@ -25,7 +25,7 @@ property :listen,
 property :listen_mode,
   kind_of: String,
   coerce: proc { |v| v.to_s },
-  default: "00660"
+  default: '00660'
 
 # The owner of the php socket (when listen is a path)
 property :listen_user,
@@ -55,7 +55,7 @@ property :process_manager,
 # The php-fpm process idle timeout
 property :process_idle_timeout,
   kind_of: String,
-  default: "10s"
+  default: '10s'
 
 # The maximum amount of php-fpm processes in the pool
 # - Note : When the process_manager is static, this is the total processes
@@ -135,7 +135,7 @@ property :php_admin_variables,
 property :path,
   kind_of: String,
   default: lazy { |r|
-    file_name = r.name.include?(".conf") ? r.name : "#{r.name}.conf"
+    file_name = r.name.include?('.conf') ? r.name : "#{r.name}.conf"
     "#{node['php']['fpm_pooldir']}/#{file_name}"
   }
 
@@ -152,10 +152,10 @@ end
 action :create do
   template new_resource.path do
     path      new_resource.path
-    cookbook  "php_wrapper"
-    source    "pool.conf.erb"
-    owner     "root"
-    group     "root"
+    cookbook  'php_wrapper'
+    source    'pool.conf.erb'
+    owner     'root'
+    group     'root'
     mode      00640
     variables new_resource.variables
     action    :create

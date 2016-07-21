@@ -7,15 +7,15 @@ ini.notifies :reload, "service[#{node[:php][:fpm][:service]}]"
 
 # Install the PHP FPM configuration file
 template node[:php][:fpm][:service_conf] do
-  source  "fpm.conf.erb"
+  source  'fpm.conf.erb'
   variables lazy { node[:php][:fpm] }
   mode    00644
   notifies :reload, "service[#{node[:php][:fpm][:service]}]"
 end
 
 # Override the upstart service script on ubuntu to resolve broken restart
-template "/etc/init/php5-fpm.conf" do
-  source  "fpm.upstart.conf.erb"
+template '/etc/init/php5-fpm.conf' do
+  source  'fpm.upstart.conf.erb'
   mode    00644
   notifies :reload, "service[#{node[:php][:fpm][:service]}]"
   only_if do

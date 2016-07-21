@@ -13,7 +13,7 @@ property :name,
 # Priority prefix for the enabled configuration file
 property :priority,
   kind_of: String,
-  default: "20"
+  default: '20'
 
 # Target path to install the configuration file in
 property :path,
@@ -23,18 +23,18 @@ property :path,
 # PHP SAPI packages to enable / disable the module for
 property :php_sapi,
   kind_of: [String, Array],
-  coerce: proc { |v| Array(v).map {|v| v.split(" ")}.flatten },
+  coerce: proc { |v| Array(v).map {|v| v.split(' ')}.flatten },
   default: %w(ALL)
 
 # Cookbook providing the configuration file template
 property :cookbook,
   kind_of: String,
-  default: "php_wrapper"
+  default: 'php_wrapper'
 
 # Template name to use
 property :source,
   kind_of: String,
-  default: "extension.ini.erb"
+  default: 'extension.ini.erb'
 
 # PHP directives to define within the configuration file
 property :directives,
@@ -102,8 +102,8 @@ action_class do
     @template_resource ||= template new_resource.path do
       source new_resource.source
       cookbook new_resource.cookbook
-      owner "root"
-      group "root"
+      owner 'root'
+      group 'root'
       mode  00644
       variables name: new_resource.name,
                 priority: new_resource.priority,
@@ -127,7 +127,7 @@ action_class do
   # this resource should provide the required PHP SAPI symlinks
   #
   def supports_php5query?
-    ::File.exists?("/usr/sbin/php5query")
+    ::File.exists?('/usr/sbin/php5query')
   end
 
   # List of the installed PHP SAPIs
@@ -142,7 +142,7 @@ action_class do
   # List of the resource's desired PHP SAPI (new_resource.php_sapi)
   #
   def resource_sapi_list
-    if new_resource.php_sapi.include?("ALL") then sapi_list
+    if new_resource.php_sapi.include?('ALL') then sapi_list
     elsif supports_php5query? then new_resource.php_sapi
     else Array.new
     end
@@ -164,7 +164,7 @@ action_class do
 
   # Files currently installed for a specific PHP SAPI
   #
-  def sapi_files_found(sapi, priority = "*")
+  def sapi_files_found(sapi, priority = '*')
     ::Dir.glob(sapi_file_path(sapi, priority)) + ::Dir.glob(sapi_file_path(sapi))
   end
 end

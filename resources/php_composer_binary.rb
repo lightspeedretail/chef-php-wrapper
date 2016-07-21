@@ -24,7 +24,7 @@ property :source_url,
 # Path to download the installer to
 def installer_path
   ::File.join(
-    Chef::Config["file_cache_path"], 
+    Chef::Config['file_cache_path'], 
     "composer.#{version || "latest"}"
   )
 end
@@ -54,7 +54,7 @@ action :create do
       mode 00755
     end
 
-    execute "install composer" do
+    execute 'install composer' do
       command <<-EOF
         #{node[:php][:bin]} #{new_resource.installer_path} \
         --install-dir=#{::File.dirname(new_resource.path)} \

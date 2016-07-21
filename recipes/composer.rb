@@ -1,3 +1,3 @@
 
 # Install composer
-php_composer_binary "global"
+php_composer_binary 'global'

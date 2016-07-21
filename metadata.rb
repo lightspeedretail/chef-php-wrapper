@@ -6,4 +6,4 @@ description 'Installs/Configures php_wrapper'
 long_description 'Installs/Configures php_wrapper'
 version '2.1.3'
 
-depends "php", "~> 1.7"
+depends 'php', '~> 1.7'
