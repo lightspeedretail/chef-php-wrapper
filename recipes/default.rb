@@ -7,7 +7,7 @@ include_recipe 'php::default'
   link "#{node[:php][:conf_dir]}/#{sapi}/php.ini" do
     to "#{node[:php][:conf_dir]}/php.ini"
     only_if do
-      ::Dir.exists? "#{node[:php][:conf_dir]}/#{sapi}"
+      ::Dir.exist? "#{node[:php][:conf_dir]}/#{sapi}"
     end
   end
 end

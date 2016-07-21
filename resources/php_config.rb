@@ -127,7 +127,7 @@ action_class do
   # this resource should provide the required PHP SAPI symlinks
   #
   def supports_php5query?
-    ::File.exists?('/usr/sbin/php5query')
+    ::File.exist?('/usr/sbin/php5query')
   end
 
   # List of the installed PHP SAPIs

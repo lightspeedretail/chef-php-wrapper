@@ -41,7 +41,7 @@ end
 
 # Create the current_resource object to compare against new_resource
 load_current_value do
-  if ::File.exists?(path)
+  if ::File.exist?(path)
     version `#{path} --version --no-ansi`.split(' ')[2]
   else current_value_does_not_exist!
   end
