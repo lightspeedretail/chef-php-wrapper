@@ -23,7 +23,7 @@ property :path,
 # PHP SAPI packages to enable / disable the module for
 property :php_sapi,
   kind_of: [String, Array],
-  coerce: proc { |v| Array(v).map {|v| v.split(' ')}.flatten },
+  coerce: proc { |v| Array(v).map { |v| v.split(' ') }.flatten },
   default: %w(ALL)
 
 # Cookbook providing the configuration file template
