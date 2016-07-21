@@ -1,5 +1,8 @@
 php_wrapper
 ======
+# 2.1.2
+* Bugfix php sapi detection
+
 # 2.1.1
 * Bugfix php_config actions
 
