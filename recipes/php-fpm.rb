@@ -26,7 +26,7 @@ end
 # Create php_pool resources from attributes
 node[:php][:fpm][:pools].each do |name, hash|
   php_pool name do
-    hash.each do |k,v|
+    hash.each do |k, v|
       send(k, v) if respond_to?(k)
     end
     notifies :reload, "service[#{node[:php][:fpm][:service]}]"
@@ -36,5 +36,5 @@ end
 # Register the PHP FPM service
 service node[:php][:fpm][:service] do
   supports start: true, stop: true, restart: true, reload: true
-  action [:enable,:start]
+  action [:enable, :start]
 end

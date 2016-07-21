@@ -19,7 +19,7 @@ end
 #
 node[:php][:pear_packages].each do |name, hash|
   php_pear name do
-    hash.each do |k,v|
+    hash.each do |k, v|
       send(k, v) if respond_to?(k)
     end
   end
@@ -31,7 +31,7 @@ end
 #
 node[:php][:directives][:module].each do |name, hash|
   php_config name do
-    hash.each do |k,v|
+    hash.each do |k, v|
       send(k, v) if respond_to?(k)
     end
   end
