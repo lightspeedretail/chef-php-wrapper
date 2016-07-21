@@ -40,7 +40,7 @@ property :listen_group,
 # The maximum amount of pending connections to the php listener
 property :backlog,
   kind_of: Integer,
-  default: 65535
+  default: 65_535
 
 # List of IPv4 addresses of FastCGI clients allowed to connect
 property :allowed_clients,
