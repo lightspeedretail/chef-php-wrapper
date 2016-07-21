@@ -18,7 +18,7 @@ property :priority,
 # Target path to install the configuration file in
 property :path,
   kind_of: String,
-  default: lazy { |r| "#{node[:php][:ext_conf_dir]}/#{r.name}.ini" }
+  default: lazy { |r| "#{node['php']['ext_conf_dir']}/#{r.name}.ini" }
 
 # PHP SAPI packages to enable / disable the module for
 property :php_sapi,

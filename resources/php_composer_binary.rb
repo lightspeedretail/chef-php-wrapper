@@ -8,18 +8,18 @@ resource_name :php_composer_binary
 property :path,
   kind_of: String,
   required: true,
-  default: lazy { node[:php][:composer][:command] }
+  default: lazy { node['php']['composer']['command'] }
 
 # Version to install
 property :version,
   kind_of: String,
-  default: lazy { node[:php][:composer][:version] }
+  default: lazy { node['php']['composer']['version'] }
 
 # Url of the composer installer
 property :source_url,
   desired_state: false,
   kind_of: String,
-  default: lazy { node[:php][:composer][:url] }
+  default: lazy { node['php']['composer']['url'] }
 
 # Path to download the installer to
 def installer_path
@@ -56,7 +56,7 @@ action :create do
 
     execute 'install composer' do
       command <<-EOF
-        #{node[:php][:bin]} #{new_resource.installer_path} \
+        #{node['php']['bin']} #{new_resource.installer_path} \
         --install-dir=#{::File.dirname(new_resource.path)} \
         --filename=#{::File.basename(new_resource.path)} \
         --version=#{new_resource.version}

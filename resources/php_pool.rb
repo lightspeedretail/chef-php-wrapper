@@ -9,12 +9,12 @@ actions :create, :delete, :disable
 # User name that the php-pool will run as
 property :user,
   kind_of: String,
-  default: lazy { node[:php][:fpm_user] }
+  default: lazy { node['php']['fpm_user'] }
 
 # Group name that the php-pool will run as
 property :group,
   kind_of: String,
-  default: lazy { node[:php][:fpm_group] }
+  default: lazy { node['php']['fpm_group'] }
 
 # Port of socket path the php-pool will listen on
 property :listen,

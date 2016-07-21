@@ -20,7 +20,7 @@ property :arguments,
 # Path to the composer binary
 property :path,
   kind_of: String,
-  default: lazy { node[:php][:composer][:command] }
+  default: lazy { node['php']['composer']['command'] }
 
 # User to execute the command as
 property :user,
