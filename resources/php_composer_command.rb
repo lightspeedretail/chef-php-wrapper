@@ -13,7 +13,9 @@ property :cwd,
 property :arguments,
   kind_of: [String, Array],
   coerce: proc { |v| Array(v) },
-  default: %w(--no-ansi --no-interaction --prefer-dist --optimize-autoloader)
+  default: lazy { 
+    %w(--no-ansi --no-interaction --prefer-dist --optimize-autoloader)
+  }
 
 # Path to the composer binary
 property :path,
