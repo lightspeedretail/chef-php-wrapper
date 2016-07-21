@@ -13,7 +13,7 @@ include_recipe 'php::default'
 end
 
 # Install PHP Pear packages from attributes
-# - Note: Given that upstream php_pear does not have the concept of 
+# - Note: Given that upstream php_pear does not have the concept of
 #   configuration file priorities, it is highly recommended that you _not_
 #   use the `directives` and `zend_extensions` properties on this resource.
 #

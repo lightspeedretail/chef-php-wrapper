@@ -13,7 +13,7 @@ property :cwd,
 property :arguments,
   kind_of: [String, Array],
   coerce: proc { |v| Array(v) },
-  default: lazy { 
+  default: lazy {
     %w(--no-ansi --no-interaction --prefer-dist --optimize-autoloader)
   }
 

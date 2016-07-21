@@ -1,5 +1,5 @@
 # A resource which handles installing the Composer php application either
-# globally or for a given project. 
+# globally or for a given project.
 # @since 2.0.0
 
 resource_name :php_composer_binary
@@ -24,7 +24,7 @@ property :source_url,
 # Path to download the installer to
 def installer_path
   ::File.join(
-    Chef::Config['file_cache_path'], 
+    Chef::Config['file_cache_path'],
     "composer.#{version || "latest"}"
   )
 end

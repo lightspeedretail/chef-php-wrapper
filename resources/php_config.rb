@@ -95,7 +95,7 @@ action_class do
   def whyrun_supported?
     true
   end
-  
+
   # Shared template resource used within the actions
   #
   def template_resource
