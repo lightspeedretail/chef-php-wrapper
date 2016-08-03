@@ -5,6 +5,7 @@ php\_wrapper
 -----
 * Remove dependency on common\_attrs
 * Change a default value to lazy to ensure it's content is cloned
+* Bugfix template error for max\_requests
 
 2.1.3
 -----

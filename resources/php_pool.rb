@@ -187,7 +187,7 @@ def variables
     start_servers: start_servers,
     min_spare_servers: min_spare_servers,
     max_spare_servers: max_spare_servers,
-    max_requets: max_requests,
+    max_requests: max_requests,
     catch_workers_output: catch_workers_output,
     status_path: status_path,
     ping_path: ping_path,
