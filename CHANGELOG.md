@@ -1,6 +1,10 @@
 php\_wrapper
 ======
 
+2.3.0
+-----
+* Bumped composer version to 1.3.3
+
 2.2.0
 -----
 * Remove dependency on common\_attrs
