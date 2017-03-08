@@ -1,5 +1,5 @@
 {
-  "revision_id": "478c0d6cdaa65ddfeecef2d6c8bef60565dae813223dae9837f8a40e980ca3e9",
+  "revision_id": "1fd61cbf66ab7fe4363f3dc64c0ac6c1c134993ffea6ff10f68147104146c5d2",
   "name": "php_wrapper",
   "run_list": [
     "recipe[php_wrapper::default]",
@@ -8,14 +8,14 @@
   "cookbook_locks": {
     "php_wrapper": {
       "version": "2.3.0",
-      "identifier": "289c9b23fdc5530219624ba16903072188a6da59",
-      "dotted_decimal_identifier": "11431189206123859.590859919780099.7840607951449",
+      "identifier": "b51bb7e4ea6b37e318324f65e7898ee7bed3360f",
+      "dotted_decimal_identifier": "50977447418161975.63921424072828809.157125990102543",
       "source": ".",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
         "remote": null,
-        "revision": "5a5ef68b36929a19647cced4b016dabde6d7efaa",
+        "revision": "2d04ff772e4be3bb9890600722f116545814252a",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [
@@ -206,12 +206,6 @@
       ]
     ],
     "dependencies": {
-      "php_wrapper (2.3.0)": [
-        [
-          "php",
-          "~> 1.7"
-        ]
-      ],
       "php (1.10.1)": [
         [
           "build-essential",
@@ -292,6 +286,12 @@
       ],
       "ohai (5.0.0)": [
 
+      ],
+      "php_wrapper (2.3.0)": [
+        [
+          "php",
+          "~> 1.7"
+        ]
       ]
     }
   }
