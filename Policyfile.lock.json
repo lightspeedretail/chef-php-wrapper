@@ -1,5 +1,5 @@
 {
-  "revision_id": "1fd61cbf66ab7fe4363f3dc64c0ac6c1c134993ffea6ff10f68147104146c5d2",
+  "revision_id": "aebe99ed8baaf534fe899ea7233fb17dbb6b5e08a194ef247db5ac8b24645019",
   "name": "php_wrapper",
   "run_list": [
     "recipe[php_wrapper::default]",
@@ -7,19 +7,19 @@
   ],
   "cookbook_locks": {
     "php_wrapper": {
-      "version": "2.3.0",
-      "identifier": "b51bb7e4ea6b37e318324f65e7898ee7bed3360f",
-      "dotted_decimal_identifier": "50977447418161975.63921424072828809.157125990102543",
+      "version": "2.3.1",
+      "identifier": "a6079cbdbc26a2ebfe09e8252ed6b56ca0c8864b",
+      "dotted_decimal_identifier": "46733215913485986.66425938029915862.199478158591563",
       "source": ".",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
-        "remote": null,
-        "revision": "2d04ff772e4be3bb9890600722f116545814252a",
-        "working_tree_clean": false,
+        "remote": "git@github.com:lightspeedretail/chef-php-wrapper.git",
+        "revision": "6443b29d5db4ad0a8a894fa73f36393cf83381e9",
+        "working_tree_clean": true,
         "published": true,
         "synchronized_remote_branches": [
-          "origin/v2.3.0"
+          "origin/v2.3.1"
         ]
       },
       "source_options": {
@@ -206,6 +206,12 @@
       ]
     ],
     "dependencies": {
+      "php_wrapper (2.3.1)": [
+        [
+          "php",
+          "~> 1.7"
+        ]
+      ],
       "php (1.10.1)": [
         [
           "build-essential",
@@ -286,12 +292,6 @@
       ],
       "ohai (5.0.0)": [
 
-      ],
-      "php_wrapper (2.3.0)": [
-        [
-          "php",
-          "~> 1.7"
-        ]
       ]
     }
   }
