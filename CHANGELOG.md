@@ -4,6 +4,7 @@ php\_wrapper
 2.3.1
 -----
 * Fixed the in-place upgrade of composer
+* Bumped composer version to 1.4.0
 
 2.3.0
 -----
