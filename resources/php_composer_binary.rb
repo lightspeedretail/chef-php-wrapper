@@ -48,12 +48,12 @@ load_current_value do
 end
 
 action :create do
-  converge_if_changed do
-    remote_file new_resource.installer_path do
-      source new_resource.source_url
-      mode 00755
-    end
+  remote_file new_resource.installer_path do
+    source new_resource.source_url
+    mode 00755
+  end
 
+  converge_if_changed :version do
     execute 'install composer' do
       command <<-EOF
         #{node['php']['bin']} #{new_resource.installer_path} \

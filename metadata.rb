@@ -4,6 +4,6 @@ maintainer_email 'jonathan@serafini.ca'
 license 'apachev2'
 description 'Installs/Configures php_wrapper'
 long_description 'Installs/Configures php_wrapper'
-version '2.3.0'
+version '2.3.1'
 
 depends 'php', '~> 1.7'
