@@ -156,7 +156,7 @@ bcmath.scale = 0
 
 [Session]
 session.save_handler            = files
-session.save_path               = "/var/lib/php5/sessions"
+session.save_path               = "<%= node['php_wrapper']['session']['save_path'] %>"
 session.use_cookies             = 1
 session.use_only_cookies        = 1
 session.name                    = PHPSESSID
