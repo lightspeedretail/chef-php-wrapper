@@ -19,7 +19,7 @@ template '/etc/init/php5-fpm.conf' do
   mode    00644
   notifies :reload, "service[#{node['php']['fpm']['service']}]"
   only_if do
-    'ubuntu' == node['platform']
+    'ubuntu' == node['platform'] && node['php']['version'] == '7.1'
   end
 end
 
