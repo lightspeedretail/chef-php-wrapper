@@ -1,11 +1,3 @@
-
-# Core config
-default['php']['conf_dir'] = '/etc/php5'
-
-# Install packages through the standard `php` cookbook
-default['php']['packages'].concat(%w())
-default['php']['mysql']['package'] = 'php5-mysqlnd'
-
 # Install PHP Pear packages through our custom resources
 default['php']['pear_packages'] = {}
 
