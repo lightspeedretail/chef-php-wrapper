@@ -1,6 +1,10 @@
 php\_wrapper
 ======
 
+2.4.0
+-----
+* DO-2897 Support php 7.1
+
 2.3.1
 -----
 * Fixed the in-place upgrade of composer
