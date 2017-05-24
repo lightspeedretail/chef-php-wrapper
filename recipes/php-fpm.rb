@@ -1,10 +1,6 @@
 # Install the PHP FPM package
 package node['php']['fpm_package']
 
-# Ensure any change to the .ini file triggers a reload of php-fpm
-ini = resources(template: "#{node['php']['conf_dir']}/php.ini")
-ini.notifies :reload, "service[#{node['php']['fpm_service']}]"
-
 # Install the PHP FPM configuration file
 template node['php']['fpm_service_conf'] do
   source 'fpm.conf.erb'
@@ -27,4 +23,5 @@ end
 service node['php']['fpm_service'] do
   supports start: true, stop: true, restart: true, reload: true
   action [:enable, :start]
+  subscribes :reload, "template[#{node['php']['conf_dir']}/php.ini]"
 end
