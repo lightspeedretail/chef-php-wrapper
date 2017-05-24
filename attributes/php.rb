@@ -1,5 +1,6 @@
 # Install PHP Pear packages through our custom resources
 default['php']['pear_packages'] = {}
+default['php']['packages'] = []
 
 # Use custom php.ini template
 # (php upstream)

@@ -6,16 +6,16 @@
 # Version specific configs are in the recipe
 
 # Version agnostic ones
-default['php']['fpm']['user'] = 'www-data'
-default['php']['fpm']['group'] = 'www-data'
-default['php']['fpm']['log_level'] = 'warning'
-default['php']['fpm']['restart_threshold'] = 0
-default['php']['fpm']['restart_interval'] = 0
-default['php']['fpm']['control_timeout'] = 0
+default['php']['fpm_user'] = 'www-data'
+default['php']['fpm_group'] = 'www-data'
+default['php']['fpm_log_level'] = 'warning'
+default['php']['fpm_restart_threshold'] = 0
+default['php']['fpm_restart_interval'] = 0
+default['php']['fpm_control_timeout'] = 0
 
 # php-fpm pool definitions
 #
-default['php']['fpm']['pools'].tap do |config|
+default['php']['fpm_pools'].tap do |config|
   # This is the default pool configuration as shipped with Ubuntu
   config['www'].tap do |www|
     www['listen'] = '127.0.0.1:65500'

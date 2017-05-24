@@ -151,7 +151,7 @@ action_class do
   # PHP SAPI specific directory
   #
   def sapi_directory(sapi)
-    "/etc/php5/#{sapi}/conf.d"
+    "#{node['php']['conf_dir']}/#{sapi}/conf.d"
   end
 
   # PHP SAPI specific file path
