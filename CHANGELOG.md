@@ -1,6 +1,11 @@
 php\_wrapper
 ======
 
+3.0.0
+-----
+* DO-3084 Move away from the deprecated php5.6
+** This is a breaking change because it changes the namespace used for a lot of php attributes
+
 2.4.0
 -----
 * DO-2897 Support php 7.1
