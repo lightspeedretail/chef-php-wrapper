@@ -1,6 +1,10 @@
 php\_wrapper
 ======
 
+3.0.1
+-----
+* 3.0.0 had broken php7 support via one of the resources renamed. Fixed in this release
+
 3.0.0
 -----
 * DO-3084 Move away from the deprecated php5.6
