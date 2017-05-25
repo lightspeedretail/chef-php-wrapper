@@ -27,6 +27,8 @@ node.default['php'].tap do |php|
       php['fpm_socket']          = '/var/run/php/php7.1-fpm.sock'
       php['fpm_default_conf']    = '/etc/php/7.1/fpm/pool.d/www.conf'
       php['fpm_service_conf']    = '/etc/php/7.1/fpm/php-fpm.conf'
+      php['fpm_error_log']       = '/var/log/php7.1-fpm.log'
+      php['fpm_pid']             = '/var/run/php7.1-fpm.pid'
       php['enable_mod']          = '/usr/sbin/phpenmod'
       php['disable_mod']         = '/usr/sbin/phpdismod'
       php['ext_conf_dir']        = '/etc/php/7.1/mods-available'
