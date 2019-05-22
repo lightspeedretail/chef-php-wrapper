@@ -1,6 +1,11 @@
 php\_wrapper
 ======
 
+3.1.0
+-----
+* Bumping composer to latest available (1.8.5)
+* Use different source for php packages
+
 3.0.1
 -----
 * 3.0.0 had broken php7 support via one of the resources renamed. Fixed in this release
