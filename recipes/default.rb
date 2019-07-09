@@ -2,7 +2,11 @@
 #
 apt_repository 'php7.1' do
   distribution node['lsb']['codename']
-  uri 'ppa:ondrej/php'
+  uri "https://#{node['apt_repo']['lightspeedhq']['username']}:#{node['apt_repo']['lightspeedhq']['password']}@lightspeedhq.jfrog.io/lightspeedhq/debian"
+  key "https://#{node['apt_repo']['lightspeedhq']['username']}:#{node['apt_repo']['lightspeedhq']['password']}@lightspeedhq.jfrog.io/lightspeedhq/debian/mirror.cs.uchicago.edu.gpg"
+  components ['main']
+  arch 'amd64'
+  trusted true
   only_if { node['php']['version'].start_with?('7') }
 end
 
