@@ -4,7 +4,7 @@ maintainer_email 'pg.omni.devops@lightspeedhq.com'
 license          'Apache 2.0'
 description      'Installs/Configures php_wrapper'
 long_description 'Installs/Configures php_wrapper'
-version          '3.1.0'
+version          '3.2.0'
 source_url       'https://github.com/lightspeedretail/chef-php-wrapper'
 issues_url       'https://github.com/lightspeedretail/chef-php-wrapper/issues'
 

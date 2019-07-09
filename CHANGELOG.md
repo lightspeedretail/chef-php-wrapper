@@ -1,6 +1,10 @@
 php\_wrapper
 ======
 
+3.2.0
+-----
+* Use private repo for php7.1 packages as well
+
 3.1.0
 -----
 * Bumping composer to latest available (1.8.5)
