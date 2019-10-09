@@ -1,23 +1,25 @@
 # Install PHP 7.1 from PPA
 #
 apt_repository 'php7.1' do
-  distribution node['lsb']['codename']
-  uri "https://#{node['apt_repo']['lightspeedhq']['username']}:#{node['apt_repo']['lightspeedhq']['password']}@lightspeedhq.jfrog.io/lightspeedhq/debian"
-  key "https://#{node['apt_repo']['lightspeedhq']['username']}:#{node['apt_repo']['lightspeedhq']['password']}@lightspeedhq.jfrog.io/lightspeedhq/debian/mirror.cs.uchicago.edu.gpg"
-  components ['main']
-  arch 'amd64'
-  trusted true
-  only_if { node['php']['version'].start_with?('7') }
+  distribution  node['lsb']['codename']
+  uri           "https://#{node['apt_repo']['lightspeedhq']['username']}:#{node['apt_repo']['lightspeedhq']['password']}@lightspeedhq.jfrog.io/lightspeedhq/debian"
+  key           "https://#{node['apt_repo']['lightspeedhq']['username']}:#{node['apt_repo']['lightspeedhq']['password']}@lightspeedhq.jfrog.io/lightspeedhq/debian/mirror.cs.uchicago.edu.gpg"
+  components    ['main']
+  arch          'amd64'
+  repo_name     'jfrog-lightspeedhq-debian-php71'
+  trusted       true
+  only_if       { node['php']['version'].start_with?('7') }
 end
 
 apt_repository 'php5.6' do
-  distribution node['lsb']['codename']
-  uri "https://#{node['apt_repo']['lightspeedhq']['username']}:#{node['apt_repo']['lightspeedhq']['password']}@lightspeedhq.jfrog.io/lightspeedhq/debian"
-  key "https://#{node['apt_repo']['lightspeedhq']['username']}:#{node['apt_repo']['lightspeedhq']['password']}@lightspeedhq.jfrog.io/lightspeedhq/debian/mirror.cs.uchicago.edu.gpg"
-  components ['main']
-  arch 'amd64'
-  trusted true
-  only_if { node['php']['version'].start_with?('5.6') }
+  distribution  node['lsb']['codename']
+  uri           "https://#{node['apt_repo']['lightspeedhq']['username']}:#{node['apt_repo']['lightspeedhq']['password']}@lightspeedhq.jfrog.io/lightspeedhq/debian"
+  key           "https://#{node['apt_repo']['lightspeedhq']['username']}:#{node['apt_repo']['lightspeedhq']['password']}@lightspeedhq.jfrog.io/lightspeedhq/debian/mirror.cs.uchicago.edu.gpg"
+  components    ['main']
+  arch          'amd64'
+  repo_name     'jfrog-lightspeedhq-debian-php56'
+  trusted       true
+  only_if       { node['php']['version'].start_with?('5.6') }
 end
 
 
