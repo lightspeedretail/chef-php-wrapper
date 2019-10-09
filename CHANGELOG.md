@@ -3,7 +3,7 @@ php\_wrapper
 
 3.3.0
 -----
-* Use token authentication for artifactory
+* Use encrypted password authentication for artifactory
 
 3.2.0
 -----
