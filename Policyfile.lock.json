@@ -1,5 +1,5 @@
 {
-  "revision_id": "59fc6554e055a1a5b94a9dc349602e47c3374e6789972a9284699071b4398a03",
+  "revision_id": "34c8cc3d819050005141ca11860cfe7f70e8d39858905e5eb57b84adeb4c5392",
   "name": "php_wrapper",
   "run_list": [
     "recipe[php_wrapper::default]",
@@ -8,19 +8,18 @@
   "cookbook_locks": {
     "php_wrapper": {
       "version": "3.3.0",
-      "identifier": "b6bd5f340870586d96363a4e01b072259e888f36",
-      "dotted_decimal_identifier": "51436662353850456.30845932112052656.125505899106102",
+      "identifier": "a89237f89fa7052dff661774321c5cdc1db8c7b0",
+      "dotted_decimal_identifier": "47448565179459333.12947187897217564.102100461209520",
       "source": ".",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
         "remote": null,
-        "revision": "5bfbba8c45858c0b4e4c1144ee4e9a176c8a1d1e",
+        "revision": "a30b6a4b9ac105023eacd3ce836339620e91b2fd",
         "working_tree_clean": false,
-        "published": true,
+        "published": false,
         "synchronized_remote_branches": [
-          "origin/HEAD -> origin/master",
-          "origin/master"
+
         ]
       },
       "source_options": {
@@ -58,6 +57,17 @@
       "source_options": {
         "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/php/versions/4.0.0/download",
         "version": "4.0.0"
+      }
+    },
+    "apt": {
+      "version": "5.1.0",
+      "identifier": "8a4885b9e5b79c7148d7eabd4a39fb2a68c77d04",
+      "dotted_decimal_identifier": "38923285972760476.31886764561746489.276159565102340",
+      "cache_key": "apt-5.1.0-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/apt/versions/5.1.0/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/apt/versions/5.1.0/download",
+        "version": "5.1.0"
       }
     },
     "build-essential": {
@@ -115,6 +125,17 @@
         "version": "2.1.0"
       }
     },
+    "compat_resource": {
+      "version": "12.19.1",
+      "identifier": "e83881cec71c93482a721e30c09eaa1b057ddd8f",
+      "dotted_decimal_identifier": "65364324767964307.20312867944317086.187033032973711",
+      "cache_key": "compat_resource-12.19.1-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/compat_resource/versions/12.19.1/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/compat_resource/versions/12.19.1/download",
+        "version": "12.19.1"
+      }
+    },
     "ohai": {
       "version": "5.3.0",
       "identifier": "3ad58179813321f2497a12ea4e2bbb6018a47ee3",
@@ -152,6 +173,10 @@
         "= 4.0.0"
       ],
       [
+        "apt",
+        "= 5.1.0"
+      ],
+      [
         "build-essential",
         "= 8.2.1"
       ],
@@ -172,6 +197,10 @@
         "= 2.1.0"
       ],
       [
+        "compat_resource",
+        "= 12.19.1"
+      ],
+      [
         "ohai",
         "= 5.3.0"
       ]
@@ -181,6 +210,10 @@
         [
           "php",
           "~> 4.0.0"
+        ],
+        [
+          "apt",
+          "~> 5.1.0"
         ]
       ],
       "seven_zip (2.0.2)": [
@@ -213,6 +246,12 @@
           ">= 0.0.0"
         ]
       ],
+      "apt (5.1.0)": [
+        [
+          "compat_resource",
+          ">= 12.16.3"
+        ]
+      ],
       "build-essential (8.2.1)": [
         [
           "seven_zip",
@@ -240,6 +279,9 @@
           "seven_zip",
           ">= 0.0.0"
         ]
+      ],
+      "compat_resource (12.19.1)": [
+
       ],
       "ohai (5.3.0)": [
 

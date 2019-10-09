@@ -9,3 +9,4 @@ source_url       'https://github.com/lightspeedretail/chef-php-wrapper'
 issues_url       'https://github.com/lightspeedretail/chef-php-wrapper/issues'
 
 depends 'php', '~> 4.0.0'
+depends 'apt', '~> 5.1.0'
