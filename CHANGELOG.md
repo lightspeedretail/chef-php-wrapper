@@ -1,6 +1,10 @@
 php\_wrapper
 ======
 
+3.3.0
+-----
+* Use encrypted password authentication for artifactory
+
 3.2.0
 -----
 * Use private repo for php7.1 packages as well
