@@ -1,9 +1,15 @@
-# Install PHP 7.1 from PPA
+# Install PHP from PPA
 #
+
+template '/etc/apt/auth.conf' do
+  # sensitive true
+  source 'auth.conf.erb'
+end
+
 apt_repository 'php7.1' do
   distribution  node['lsb']['codename']
-  uri           "https://#{node['apt_repo']['lightspeedhq']['username']}:#{node['apt_repo']['lightspeedhq']['password']}@lightspeedhq.jfrog.io/lightspeedhq/debian"
-  key           "https://#{node['apt_repo']['lightspeedhq']['username']}:#{node['apt_repo']['lightspeedhq']['password']}@lightspeedhq.jfrog.io/lightspeedhq/debian/mirror.cs.uchicago.edu.gpg"
+  uri           "https://lightspeedhq.jfrog.io/lightspeedhq/debian"
+  key           "https://lightspeedhq.jfrog.io/lightspeedhq/debian/mirror.cs.uchicago.edu.gpg"
   components    ['main']
   arch          'amd64'
   trusted       true
@@ -12,8 +18,8 @@ end
 
 apt_repository 'php5.6' do
   distribution  node['lsb']['codename']
-  uri           "https://#{node['apt_repo']['lightspeedhq']['username']}:#{node['apt_repo']['lightspeedhq']['password']}@lightspeedhq.jfrog.io/lightspeedhq/debian"
-  key           "https://#{node['apt_repo']['lightspeedhq']['username']}:#{node['apt_repo']['lightspeedhq']['password']}@lightspeedhq.jfrog.io/lightspeedhq/debian/mirror.cs.uchicago.edu.gpg"
+  uri           "https://lightspeedhq.jfrog.io/lightspeedhq/debian"
+  key           "https://lightspeedhq.jfrog.io/lightspeedhq/debian/mirror.cs.uchicago.edu.gpg"
   components    ['main']
   arch          'amd64'
   trusted       true

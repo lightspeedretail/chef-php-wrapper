@@ -1,5 +1,5 @@
 {
-  "revision_id": "34c8cc3d819050005141ca11860cfe7f70e8d39858905e5eb57b84adeb4c5392",
+  "revision_id": "2de7a40a725e1afe4adcb694f37fa82ad217d76eef4b22ac4f4ee8a4df6e3e71",
   "name": "php_wrapper",
   "run_list": [
     "recipe[php_wrapper::default]",
@@ -7,19 +7,20 @@
   ],
   "cookbook_locks": {
     "php_wrapper": {
-      "version": "3.3.0",
-      "identifier": "a89237f89fa7052dff661774321c5cdc1db8c7b0",
-      "dotted_decimal_identifier": "47448565179459333.12947187897217564.102100461209520",
+      "version": "3.3.1",
+      "identifier": "839f1c3a0d591525800f3583c619a11768d4328c",
+      "dotted_decimal_identifier": "37048165530949909.10555376948987417.177121915056780",
       "source": ".",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
         "remote": null,
-        "revision": "a30b6a4b9ac105023eacd3ce836339620e91b2fd",
+        "revision": "cf44ac50e00e56d27405eac49b234829f52c9c2d",
         "working_tree_clean": false,
-        "published": false,
+        "published": true,
         "synchronized_remote_branches": [
-
+          "origin/HEAD -> origin/master",
+          "origin/master"
         ]
       },
       "source_options": {
@@ -206,7 +207,7 @@
       ]
     ],
     "dependencies": {
-      "php_wrapper (3.3.0)": [
+      "php_wrapper (3.3.1)": [
         [
           "php",
           "~> 4.0.0"
