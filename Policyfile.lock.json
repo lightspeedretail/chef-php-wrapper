@@ -1,5 +1,5 @@
 {
-  "revision_id": "27d8b0e8c706bb5753a5571823492ff5cb08e826c4f7fb196e5ca3d70b087cc1",
+  "revision_id": "54c323435437d734692f0b72ca74660b452fefd0cf069ad31f43ddebde045696",
   "name": "php_wrapper",
   "run_list": [
     "recipe[php_wrapper::default]",
@@ -8,19 +8,21 @@
   "cookbook_locks": {
     "php_wrapper": {
       "version": "3.2.0",
-      "identifier": "5127fd447a3c9f049b529aec19487f0844673a69",
-      "dotted_decimal_identifier": "22843441842633887.1296678995630408.139673484081769",
+      "identifier": "8921a23d66e465130c032048b8bf9db5137ac9ef",
+      "dotted_decimal_identifier": "38599052507931749.5361232123574463.173401041455599",
       "source": ".",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
-        "remote": "git@github.com:lightspeedretail/chef-php-wrapper.git",
-        "revision": "65c2f8b27140105d23fd3770b27e8d7b4bff9d7e",
+        "remote": null,
+        "revision": "5bfbba8c45858c0b4e4c1144ee4e9a176c8a1d1e",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [
           "origin/HEAD -> origin/master",
-          "origin/master"
+          "origin/SRE-3138-apt-repo-update",
+          "origin/master",
+          "origin/test"
         ]
       },
       "source_options": {
@@ -116,14 +118,14 @@
       }
     },
     "ohai": {
-      "version": "5.2.5",
-      "identifier": "f393ae21b9c53af8a3ee75662fce43f3c2ce5167",
-      "dotted_decimal_identifier": "68560795440104762.69986038791417806.74714224415079",
-      "cache_key": "ohai-5.2.5-supermarket.chef.io",
-      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/ohai/versions/5.2.5/download",
+      "version": "5.3.0",
+      "identifier": "3ad58179813321f2497a12ea4e2bbb6018a47ee3",
+      "dotted_decimal_identifier": "16560300715225889.68197733016161835.206021404688099",
+      "cache_key": "ohai-5.3.0-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/ohai/versions/5.3.0/download",
       "source_options": {
-        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/ohai/versions/5.2.5/download",
-        "version": "5.2.5"
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/ohai/versions/5.3.0/download",
+        "version": "5.3.0"
       }
     }
   },
@@ -173,7 +175,7 @@
       ],
       [
         "ohai",
-        "= 5.2.5"
+        "= 5.3.0"
       ]
     ],
     "dependencies": {
@@ -241,7 +243,7 @@
           ">= 0.0.0"
         ]
       ],
-      "ohai (5.2.5)": [
+      "ohai (5.3.0)": [
 
       ]
     }
