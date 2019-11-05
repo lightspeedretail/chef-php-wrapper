@@ -13,7 +13,7 @@ end
 apt_repository 'php7.1' do
   distribution  node['lsb']['codename']
   uri           "https://lightspeedhq.jfrog.io/lightspeedhq/debian"
-  key           "https://mirror.cs.uchicago.edu/php/7/key.gpg" # todo: replace this
+  key           "mirror.cs.uchicago.edu.gpg"
   components    ['main']
   arch          'amd64'
   trusted       true
@@ -23,7 +23,7 @@ end
 apt_repository 'php5.6' do
   distribution  node['lsb']['codename']
   uri           "https://lightspeedhq.jfrog.io/lightspeedhq/debian"
-  key           "https://mirror.cs.uchicago.edu/php/7/key.gpg" # todo: replace this
+  key           "mirror.cs.uchicago.edu.gpg"
   components    ['main']
   arch          'amd64'
   trusted       true

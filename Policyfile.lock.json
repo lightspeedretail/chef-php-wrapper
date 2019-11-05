@@ -1,5 +1,5 @@
 {
-  "revision_id": "4208cf9d84dd72044ac343f48669a42ea74485f888e6a403c4bcd98d5aae46fc",
+  "revision_id": "c44831bf31bd2dd794f54e6303c234b65a5c8d784cd78c633e25ceed08fc4a56",
   "name": "php_wrapper",
   "run_list": [
     "recipe[php_wrapper::default]",
@@ -8,20 +8,18 @@
   "cookbook_locks": {
     "php_wrapper": {
       "version": "3.4.0",
-      "identifier": "6036d4054fa2a365d037415c48a43e17468a83cc",
-      "dotted_decimal_identifier": "27081882014294691.28657908386121892.68269688652748",
+      "identifier": "36ed5c78ad6a37903afd4f5a43e013aa32362f2f",
+      "dotted_decimal_identifier": "15460630159780407.40597256278787040.21621707779887",
       "source": ".",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
-        "remote": null,
-        "revision": "cf44ac50e00e56d27405eac49b234829f52c9c2d",
+        "remote": "git@github.com:lightspeedretail/chef-php-wrapper.git",
+        "revision": "8552be61cc1450f098bceb1356fc6d01e860afc0",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [
-          "origin/HEAD -> origin/master",
-          "origin/master",
-          "origin/test"
+          "origin/SRE-3138-jfrog-auth"
         ]
       },
       "source_options": {
