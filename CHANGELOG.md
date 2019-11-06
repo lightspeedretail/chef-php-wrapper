@@ -1,7 +1,7 @@
 php\_wrapper
 ======
 
-3.4.0
+4.0.0
 -----
 * Moving repo authentication to /etc/apt/auth.conf
 * Added gpg key for jfrog repos as a file
