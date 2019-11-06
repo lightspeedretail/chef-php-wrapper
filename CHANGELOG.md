@@ -1,6 +1,11 @@
 php\_wrapper
 ======
 
+3.4.0
+-----
+* Moving repo authentication to /etc/apt/auth.conf
+* Added gpg key for jfrog repos as a file
+
 3.3.0
 -----
 * Use encrypted password authentication for artifactory

@@ -1,5 +1,5 @@
 {
-  "revision_id": "34c8cc3d819050005141ca11860cfe7f70e8d39858905e5eb57b84adeb4c5392",
+  "revision_id": "c44831bf31bd2dd794f54e6303c234b65a5c8d784cd78c633e25ceed08fc4a56",
   "name": "php_wrapper",
   "run_list": [
     "recipe[php_wrapper::default]",
@@ -7,23 +7,34 @@
   ],
   "cookbook_locks": {
     "php_wrapper": {
-      "version": "3.3.0",
-      "identifier": "a89237f89fa7052dff661774321c5cdc1db8c7b0",
-      "dotted_decimal_identifier": "47448565179459333.12947187897217564.102100461209520",
+      "version": "3.4.0",
+      "identifier": "36ed5c78ad6a37903afd4f5a43e013aa32362f2f",
+      "dotted_decimal_identifier": "15460630159780407.40597256278787040.21621707779887",
       "source": ".",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
-        "remote": null,
-        "revision": "a30b6a4b9ac105023eacd3ce836339620e91b2fd",
+        "remote": "git@github.com:lightspeedretail/chef-php-wrapper.git",
+        "revision": "8552be61cc1450f098bceb1356fc6d01e860afc0",
         "working_tree_clean": false,
-        "published": false,
+        "published": true,
         "synchronized_remote_branches": [
-
+          "origin/SRE-3138-jfrog-auth"
         ]
       },
       "source_options": {
         "path": "."
+      }
+    },
+    "apt": {
+      "version": "5.1.0",
+      "identifier": "8a4885b9e5b79c7148d7eabd4a39fb2a68c77d04",
+      "dotted_decimal_identifier": "38923285972760476.31886764561746489.276159565102340",
+      "cache_key": "apt-5.1.0-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/apt/versions/5.1.0/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/apt/versions/5.1.0/download",
+        "version": "5.1.0"
       }
     },
     "seven_zip": {
@@ -57,17 +68,6 @@
       "source_options": {
         "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/php/versions/4.0.0/download",
         "version": "4.0.0"
-      }
-    },
-    "apt": {
-      "version": "5.1.0",
-      "identifier": "8a4885b9e5b79c7148d7eabd4a39fb2a68c77d04",
-      "dotted_decimal_identifier": "38923285972760476.31886764561746489.276159565102340",
-      "cache_key": "apt-5.1.0-supermarket.chef.io",
-      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/apt/versions/5.1.0/download",
-      "source_options": {
-        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/apt/versions/5.1.0/download",
-        "version": "5.1.0"
       }
     },
     "build-essential": {
@@ -161,6 +161,10 @@
         ">= 0.0.0"
       ],
       [
+        "apt",
+        "= 5.1.0"
+      ],
+      [
         "seven_zip",
         "= 2.0.2"
       ],
@@ -171,10 +175,6 @@
       [
         "php",
         "= 4.0.0"
-      ],
-      [
-        "apt",
-        "= 5.1.0"
       ],
       [
         "build-essential",
@@ -206,14 +206,20 @@
       ]
     ],
     "dependencies": {
-      "php_wrapper (3.3.0)": [
+      "php_wrapper (3.4.0)": [
         [
           "php",
           "~> 4.0.0"
         ],
         [
           "apt",
-          "~> 5.1.0"
+          "= 5.1.0"
+        ]
+      ],
+      "apt (5.1.0)": [
+        [
+          "compat_resource",
+          ">= 12.16.3"
         ]
       ],
       "seven_zip (2.0.2)": [
@@ -244,12 +250,6 @@
         [
           "yum-epel",
           ">= 0.0.0"
-        ]
-      ],
-      "apt (5.1.0)": [
-        [
-          "compat_resource",
-          ">= 12.16.3"
         ]
       ],
       "build-essential (8.2.1)": [
